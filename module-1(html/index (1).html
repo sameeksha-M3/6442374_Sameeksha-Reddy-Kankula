@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Community Event Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      list-style: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav{
+      background-color: #343a40;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    #events{
+      padding-left: 5%;
+      padding-top: 5%;
+    }
+    #contact
+    {
+      padding-left: 5%;
+      padding-top: 2%;
+    }
+    #home{
+      padding: 5%;
+    }
+
+    #welcomeBanner {
+      background-color: #007BFF; 
+      color: white;
+      padding: 5%;
+      text-align: center;
+      font-size: 24px;
+    }
+    .highlight {
+      background-color: rgb(51, 58, 118);
+      font-weight: bold;
+      padding: 2px 6px;
+    }
+    table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    text-align: center;
+    }
+
+    caption {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .event-img {
+      width: 180px;
+      height: 120px;
+      border: 3px solid #011101;
+      border-radius: 8px;
+      padding: 4px;
+    }
+    td {
+      padding: 10px;
+    }
+
+    #registration {
+      background-color: #f0f8ff;
+      padding: 20px;
+      margin: 30px auto;
+      width: 60%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    #registration label {
+      display: inline-block;
+      width: 140px;
+      font-weight: bold;
+    }
+
+    #registration input,
+    #registration select,
+    #registration textarea {
+      width: 60%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #registration button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #registration button:hover {
+      background-color: #218838;
+    }
+
+    output {
+      color: green;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    #feedback {
+      background-color: #fff8dc;
+      padding: 20px;
+      margin: 30px auto;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    #feedback label {
+      font-weight: bold;
+    }
+
+    #feedback input, #feedback select, #feedback textarea {
+      width: 60%;
+      padding: 8px;
+      margin: 6px 0;
+      border-radius: 4px;
+    }
+
+    #feedback img {
+      cursor: pointer;
+    }
+
+    #videoInvite {
+      background-color: #e6f9ff;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 30px auto;
+      width: 60%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #videoInvite form input {
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    video {
+      border: 3px solid #0077cc;
+      border-radius: 8px;
+    }
+
+    #preferences {
+      background-color: #fffbe6;
+      padding: 20px;
+      margin: 30px auto;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #preferences select,
+    #preferences button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    #geoSection {
+      background-color: #f0f9ff;
+      padding: 20px;
+      margin: 30px auto;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    #geoSection button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/help.html" target="_blank">Help</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home">
+      <h2>Welcome to the Community Portal</h2>
+      <p>Discover and register for local events easily.</p>
+    </section>
+     <!-- Welcome Banner -->
+      <div id="welcomeBanner">
+        Welcome to the Community Event Portal!
+        <p>
+          <span style="color: rgb(172, 27, 27); font-weight: bold;">Special Offer:</span> 
+          Get <span class="highlight">10% off</span> on your first registration!
+        </p>
+      </div>
+
+      
+    <br><br><br>
+  <!-- Event Gallery -->
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <p>Join our vibrant local community gatherings!</p>
+<br>
+<br><br>
+  <h3>Past Event Highlights</h3>
+  <table>
+    <caption>Memorable Moments from Previous Events</caption>
+    <tr>
+      <td><img src="event1.jpg" alt="Yoga Camp" title="Yoga Camp 2024" class="event-img" width="500" height="300"></td>
+      <td><img src="event2.jpg" alt="Art Workshop" title="Art Workshop for Kids" class="event-img" width="500" height="300"></td>
+      <td><img src="event3.jpg" alt="Clean-Up Drive" title="Neighborhood Clean-Up Drive" class="event-img" width="500" height="300"></td>
+    </tr>
+    <tr>
+      <td><img src="event4.jpg" alt="Food Festival" title="Local Food Festival" class="event-img" width="500" height="300"></td>
+      <td><img src="event5.jpg" alt="Cultural Night" title="Cultural Night Performances" class="event-img" width="500" height="300"></td>
+      <td><img src="event6.jpg" alt="Tree Planting" title="Tree Planting Activity" class="event-img" width="500" height="300"></td>
+    </tr>
+  </table>
+</section>
+<br><br><br>
+<!-- Event Registration Form -->
+ <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to your local event coordinators.</p>
+    </section>
+<section id="registration">
+  <h2>Register for an Event</h2>
+
+  <form id="eventForm" onsubmit="showConfirmation(event)">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required autofocus><br><br>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required><br><br>
+
+    <label for="date">Event Date:</label>
+    <input type="date" id="date" name="date" required><br><br>
+
+    <label for="eventType">Event Type:</label>
+    <select id="eventType" name="eventType" required>
+      <option value="">--Select--</option>
+      <option value="yoga">Yoga Camp</option>
+      <option value="cleanup">Clean-up Drive</option>
+      <option value="food">Food Festival</option>
+    </select><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" cols="40" placeholder="Any message for us?"></textarea><br><br>
+
+    <button type="submit">Submit</button><br><br>
+
+    <output id="confirmationMessage"></output>
+  </form>
+</section>
+
+</main>
+<br><br><br>
+
+<!-- Event Feedback Section -->
+<section id="feedback">
+  <h2>Event Feedback</h2>
+
+  <form>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" onblur="validatePhone()" placeholder="Enter 10-digit number" required>
+    <span id="phoneError" style="color: red;"></span>
+    <br><br>
+
+    <label for="eventFee">Select Event:</label>
+    <select id="eventDropdown" onchange="showFee()">
+      <option value="">--Choose Event--</option>
+      <option value="Yoga - ₹200">Yoga Camp - ₹200</option>
+      <option value="Clean-up - ₹100">Clean-up Drive - ₹100</option>
+      <option value="Food Fest - ₹250">Food Festival - ₹250</option>
+    </select>
+    <p id="feeOutput"></p>
+    <br>
+
+    <label>Feedback:</label><br>
+    <textarea id="feedbackText" rows="4" cols="50" onkeydown="countCharacters()" placeholder="Type your feedback here..."></textarea>
+    <p><strong>Characters typed:</strong> <span id="charCount">0</span></p>
+    <br>
+
+    <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+    <p id="submitMsg" style="color: green;"></p>
+  </form>
+
+  <br>
+  <p><strong>Double-click to zoom:</strong></p>
+  <img src="event1.jpg" alt="Event Photo" id="eventImage" ondblclick="enlargeImage()" width="200" style="border: 2px solid #000;">
+</section>
+<br><br><br>
+<!-- Video Invite Section -->
+<section id="videoInvite">
+  <h2>You're Invited! 🎥</h2>
+
+  <video id="promoVideo" width="480" controls oncanplay="videoReadyMessage()">
+    <source src="event-promo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <p id="videoStatus" style="color: green; font-weight: bold;"></p>
+
+  <br><br>
+  <form id="importantForm">
+    <label>Name: <input type="text" id="nameInput" required></label><br><br>
+    <label>Email: <input type="email" id="emailInput" required></label><br><br>
+    <input type="submit" value="Submit">
+  </form>
+</section>
+
+<br><br><br>
+
+<section id="preferences">
+  <h2>🎯 Select Your Preferred Event Type</h2>
+  
+  <select id="eventTypeSelect">
+    <option value="">--Choose an Event--</option>
+    <option value="Music">Music Concert</option>
+    <option value="Art">Art Workshop</option>
+    <option value="Sports">Sports Tournament</option>
+    <option value="Tech">Tech Meetup</option>
+  </select>
+
+  <p id="savedPref" style="color: green;"></p>
+
+  <button onclick="savePreference()">💾 Save Preference</button>
+  <button onclick="clearPreference()">🗑️ Clear Preferences</button>
+</section>
+
+<br><br><br>
+
+<section id="geoSection">
+  <h2>📍 Find Events Near You</h2>
+  <button onclick="findNearbyEvents()">Find Nearby Events</button>
+  <p id="locationOutput" style="color: darkgreen; font-weight: bold;"></p>
+  <p id="errorOutput" style="color: red;"></p>
+</section>
+
+
+<script>
+  function showConfirmation(event) {
+    event.preventDefault(); // Prevent real submission
+
+    const name = document.getElementById("name").value;
+    document.getElementById("confirmationMessage").textContent =
+      `Thank you, ${name}, for registering! We’ll contact you soon.`;
+  }
+
+  function validatePhone() {
+    const phone = document.getElementById("phone").value;
+    const errorSpan = document.getElementById("phoneError");
+    if (!/^\d{10}$/.test(phone)) {
+      errorSpan.textContent = "Invalid phone number!";
+    } else {
+      errorSpan.textContent = "";
+    }
+  }
+
+  function showFee() {
+    const event = document.getElementById("eventDropdown").value;
+    document.getElementById("feeOutput").textContent = "You selected: " + event;
+  }
+
+  function submitFeedback() {
+    document.getElementById("submitMsg").textContent = "✅ Feedback submitted! Thank you.";
+  }
+
+  function enlargeImage() {
+    const img = document.getElementById("eventImage");
+    if (img.width === 200) {
+      img.width = 400;
+    } else {
+      img.width = 200;
+    }
+  }
+
+
+  function countCharacters() {
+    const text = document.getElementById("feedbackText").value;
+    document.getElementById("charCount").textContent = text.length;
+  }
+  
+  function videoReadyMessage() {
+    document.getElementById("videoStatus").textContent = "🎉 Video ready to play!";
+  }
+
+  let formSubmitted = false;
+
+  document.getElementById("importantForm").addEventListener("submit", function(event) {
+    formSubmitted = true;
+    alert("✅ Form submitted successfully!");
+  });
+
+  window.onbeforeunload = function () {
+    if (!formSubmitted) {
+      return "⚠️ You have unsaved changes. Are you sure you want to leave?";
+    }
+  };
+
+  const selectBox = document.getElementById("eventTypeSelect");
+  const savedPrefDisplay = document.getElementById("savedPref");
+
+  // Load saved preference on page load
+  window.onload = function () {
+    const saved = localStorage.getItem("preferredEvent");
+    if (saved) {
+      selectBox.value = saved;
+      savedPrefDisplay.textContent = `Your saved preference: ${saved}`;
+    }
+  };
+
+  // Save preference to localStorage
+  function savePreference() {
+    const selected = selectBox.value;
+    if (selected) {
+      localStorage.setItem("preferredEvent", selected);
+      sessionStorage.setItem("sessionPref", selected); // Optional
+      savedPrefDisplay.textContent = `Saved: ${selected}`;
+    } else {
+      alert("Please select an event type first.");
+    }
+  }
+
+  // Clear preferences from both storages
+  function clearPreference() {
+    localStorage.removeItem("preferredEvent");
+    sessionStorage.clear();
+    selectBox.value = "";
+    savedPrefDisplay.textContent = "Preferences cleared!";
+  }
+
+  function findNearbyEvents() {
+    const locationOutput = document.getElementById("locationOutput");
+    const errorOutput = document.getElementById("errorOutput");
+
+    // Clear previous results
+    locationOutput.textContent = "";
+    errorOutput.textContent = "";
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError, {
+        enableHighAccuracy: true,
+        timeout: 10000, // 10 seconds
+        maximumAge: 0
+      });
+    } else {
+      errorOutput.textContent = "Geolocation is not supported by this browser.";
+    }
+
+    function showPosition(position) {
+      const lat = position.coords.latitude.toFixed(5);
+      const lon = position.coords.longitude.toFixed(5);
+      locationOutput.textContent = `✅ Your Coordinates: Latitude ${lat}, Longitude ${lon}`;
+    }
+
+    function showError(error) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          errorOutput.textContent = "❌ Permission denied. Please allow location access.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          errorOutput.textContent = "❌ Location info unavailable.";
+          break;
+        case error.TIMEOUT:
+          errorOutput.textContent = "⏳ Request timed out. Try again.";
+          break;
+        default:
+          errorOutput.textContent = "⚠️ Unknown error.";
+      }
+    }
+  }
+
+</script>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <!-- Footer information will go here -->
+  </footer>
+</body>
+</html>
